@@ -10,7 +10,7 @@
 
 ## 🚀 Live Demonstraion
 
-- [User list app](https://lighthearted-souffle-53501e.netlify.app/)
+- [User list app](https://charming-crepe-5c855d.netlify.app/)
 
 ## Setup Project Environment
 
