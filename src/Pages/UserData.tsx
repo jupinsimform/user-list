@@ -3,12 +3,9 @@ import { useAppDispatch, useAppSelector } from "../redux/store/hooks";
 import { fetchUsers } from "../redux/features/userSlice";
 import MainComponent from "../components/MainComponent";
 import { SyncLoader } from "react-spinners";
+import { UserDataProps } from "../types/Types";
 
-interface Props {
-  currentPage: number;
-}
-
-const UserData = ({ currentPage }: Props) => {
+const UserData = ({ currentPage }: UserDataProps) => {
   const user = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
 

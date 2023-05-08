@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "../../types/Types";
-
-interface HoverdataState {
-  hoverdata: User | null;
-}
+import { User, HoverdataState } from "../../types/Types";
 
 const initialState: HoverdataState = {
   hoverdata: null,

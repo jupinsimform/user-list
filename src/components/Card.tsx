@@ -1,9 +1,10 @@
-import { memo } from "react";
-
 import { useAppSelector } from "../redux/store/hooks";
+import { RootState } from "../redux/store/store";
 
 function Card() {
-  const hoverdata = useAppSelector((state) => state.hoverdata.hoverdata);
+  const hoverdata = useAppSelector(
+    (state: RootState) => state.hoverdata.hoverdata
+  );
   return (
     <div className="container position-absolute ">
       <div className="d-flex justify-content-center align-items-center flex-column">
@@ -40,4 +41,4 @@ function Card() {
   );
 }
 
-export default memo(Card);
+export default Card;

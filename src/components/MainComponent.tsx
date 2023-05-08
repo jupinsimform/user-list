@@ -1,14 +1,10 @@
-import { useState, useRef, useEffect, memo } from "react";
+import { useState, useRef, useEffect } from "react";
 import Trash from "../assets/trash.svg";
 import { useAppDispatch } from "../redux/store/hooks";
 import { setHoverdata } from "../redux/features/hoverdataSlice";
 import Lock from "../assets/lock.svg";
 import Card from "./Card";
-import { User } from "../types/Types";
-
-interface MainComponentProps {
-  data: User[];
-}
+import { User, MainComponentProps } from "../types/Types";
 
 function MainComponent({ data }: MainComponentProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -131,4 +127,4 @@ function MainComponent({ data }: MainComponentProps) {
   );
 }
 
-export default memo(MainComponent);
+export default MainComponent;

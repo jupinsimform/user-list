@@ -1,7 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import Paginate from "./components/Paginate";
+import Paginate from "./Pages/Paginate";
 
 function App() {
   return (

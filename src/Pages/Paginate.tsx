@@ -1,5 +1,5 @@
 import { useState } from "react";
-import UserData from "../containers/UserData";
+import UserData from "./UserData";
 
 function Paginate() {
   const [currentPage, setCurrentPage] = useState<number>(1);

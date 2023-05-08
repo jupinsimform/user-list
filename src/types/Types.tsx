@@ -19,3 +19,15 @@ export type InitialState = {
 export type Props = {
   hoverdata: User | null;
 };
+
+export type UserDataProps = {
+  currentPage: number;
+};
+
+export type HoverdataState = {
+  hoverdata: User | null;
+};
+
+export type MainComponentProps = {
+  data: User[];
+};
