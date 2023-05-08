@@ -1,0 +1,219 @@
+.w-8 {
+  width: 2rem;
+}
+.user_name {
+  font-size: 15px;
+}
+.text-gray {
+  color: gray;
+}
+
+.text-green {
+  color: green;
+  font-weight: 550;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.user-table {
+  width: 70%;
+  margin-top: 3%;
+}
+
+.status,
+.access {
+  background-color: rgb(249 250 251);
+  border: none;
+  border-right: 15px solid transparent;
+  outline: 2px solid #e9ecef;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 120px;
+  color: black;
+}
+
+.user {
+  width: 305px;
+  height: 485px;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 42px;
+  top: 50%;
+  left: 58%;
+  transform: translate(50%, -50%);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.cursor-ponter {
+  cursor: pointer;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.nameOfProfile {
+  font-size: medium;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+.nameOfProfile::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50rem;
+  left: 105%;
+  background-color: green;
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  font-weight: 600;
+}
+
+.active-users {
+  border: none;
+  background-color: rgb(250, 184, 61);
+  border-radius: 5px;
+  color: white;
+}
+
+progress {
+  border-radius: 7px;
+  width: 100%;
+  height: 8px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: rgb(248, 226, 186);
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: rgb(247, 175, 43);
+  border-radius: 7px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-container > div {
+  padding-top: 10px;
+}
+.paginate-ctn {
+  display: flex;
+  position: absolute;
+  top: 80%;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.round-effect {
+  color: rgb(250, 184, 61);
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 9px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-decoration: none;
+}
+
+.loader {
+  margin-top: 25%;
+  margin-left: 45%;
+}
+.round-effect:hover {
+  text-decoration: none;
+  background: rgb(248, 226, 186);
+  color: #fff;
+}
+.round-effect:hover a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.active {
+  background: rgb(250, 184, 61);
+  color: #fff;
+}
+a:link {
+  text-decoration: none;
+  color: rgb(250, 184, 61);
+}
+
+@media only screen and (max-width: 1080px) {
+  .user {
+    left: 48%;
+  }
+}
+
+@media only screen and (max-width: 905px) {
+  .user {
+    left: 35%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .user {
+    left: 27%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .user {
+    width: 275px;
+    height: 475px;
+  }
+  .loader {
+    margin-top: 40%;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
