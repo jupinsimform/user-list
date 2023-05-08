@@ -1,9 +1,7 @@
-import { useState } from "react";
-import UserData from "./UserData";
+import React from "react";
 
-function Paginate() {
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  let maxPages: number = 31;
+const PaginateComponent = ({ currentPage, setCurrentPage }: any) => {
+  let maxPages: number = 20;
   let items: JSX.Element[] = [];
   let leftSide: number = currentPage - 2;
   if (leftSide <= 0) leftSide = 1;
@@ -33,21 +31,18 @@ function Paginate() {
     setCurrentPage(Math.max(currentPage - 1, 1));
   };
   return (
-    <div>
-      <UserData currentPage={currentPage} />
-      <div className="flex-container">
-        <div className="paginate-ctn ">
-          <div className="round-effect" onClick={prevPage}>
-            &lsaquo;
-          </div>
-          {items}
-          <div className="round-effect" onClick={nextPage}>
-            &rsaquo;
-          </div>
+    <div className="flex-container">
+      <div className="paginate-ctn ">
+        <div className="round-effect" onClick={prevPage}>
+          &lsaquo;
+        </div>
+        {items}
+        <div className="round-effect" onClick={nextPage}>
+          &rsaquo;
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Paginate;
+export default PaginateComponent;

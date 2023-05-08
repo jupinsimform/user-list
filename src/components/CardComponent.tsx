@@ -1,12 +1,8 @@
-import { useAppSelector } from "../redux/store/hooks";
-import { RootState } from "../redux/store/store";
+import { CardProps } from "../types/Types";
 
-function Card() {
-  const hoverdata = useAppSelector(
-    (state: RootState) => state.hoverdata.hoverdata
-  );
+function CardComponent({ hoverdata }: CardProps) {
   return (
-    <div className="container position-absolute ">
+    <div className="user-card">
       <div className="d-flex justify-content-center align-items-center flex-column">
         <img className="profile mt-4" src={hoverdata?.avatar} alt="" />
         <div className="mt-3 fw-bold nameOfProfile">
@@ -41,4 +37,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default CardComponent;

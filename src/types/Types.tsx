@@ -16,7 +16,7 @@ export type InitialState = {
   error: string;
 };
 
-export type Props = {
+export type CardProps = {
   hoverdata: User | null;
 };
 

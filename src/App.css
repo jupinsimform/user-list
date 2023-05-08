@@ -1,3 +1,14 @@
+.main-page {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.main-page-user {
+  width: 70%;
+  overflow: hidden;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -26,8 +37,7 @@
 }
 
 .user-table {
-  width: 70%;
-  margin-top: 3%;
+  width: 100%;
 }
 
 .status,
@@ -42,19 +52,24 @@
   color: black;
 }
 
-.user {
+.card-area {
+  display: flex;
+  position: relative;
+  justify-content: end;
+  flex: 1;
+}
+
+.user-card {
   width: 305px;
   height: 485px;
   background-color: #fff;
-  display: none;
+  display: flex;
   position: absolute;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 42px;
-  top: 50%;
-  left: 58%;
-  transform: translate(50%, -50%);
+  top: 14%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -171,7 +186,7 @@ a:link {
   color: rgb(250, 184, 61);
 }
 
-@media only screen and (max-width: 1080px) {
+/* @media only screen and (max-width: 1080px) {
   .user {
     left: 48%;
   }
@@ -197,7 +212,7 @@ a:link {
   .loader {
     margin-top: 40%;
   }
-}
+} */
 
 @keyframes heartbeat {
   0% {

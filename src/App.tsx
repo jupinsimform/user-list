@@ -1,15 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Paginate from "./Pages/Paginate";
+import MainContainer from "./containers/MainContainer";
 
 function App() {
-  return (
-    <>
-      <div className="container">
-        <Paginate />
-      </div>
-    </>
-  );
+  return <MainContainer />;
 }
 
 export default App;

@@ -1,11 +1,13 @@
-import { memo, useEffect } from "react";
+import { memo, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/store/hooks";
 import { fetchUsers } from "../redux/features/userSlice";
 import MainComponent from "../components/MainComponent";
 import { SyncLoader } from "react-spinners";
-import { UserDataProps } from "../types/Types";
 
-const UserData = ({ currentPage }: UserDataProps) => {
+import PaginateContainer from "./PaginateContainer";
+
+const MainContainer = () => {
+  const [currentPage, setCurrentPage] = useState(1);
   const user = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
 
@@ -23,10 +25,14 @@ const UserData = ({ currentPage }: UserDataProps) => {
     return <div>No users found.</div>;
   }
   return (
-    <div>
+    <div className="main-container">
       <MainComponent data={user.users} />
+      <PaginateContainer
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
 
-export default memo(UserData);
+export default memo(MainContainer);
