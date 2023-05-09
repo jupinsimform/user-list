@@ -1,8 +1,7 @@
-import { useState } from "react";
-import UserData from "./MainContainer";
 import PaginateComponent from "../components/PaginateComponent";
+import { PaginateProps } from "../types/Types";
 
-function PaginateContainer({ currentPage, setCurrentPage }: any) {
+function PaginateContainer({ currentPage, setCurrentPage }: PaginateProps) {
   return (
     <PaginateComponent
       currentPage={currentPage}

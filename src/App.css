@@ -1,5 +1,5 @@
 .main-container {
-  margin: 3rem;
+  margin: 2rem;
   background-color: #fff;
 }
 
@@ -188,34 +188,6 @@ a:link {
   margin-top: 25%;
   margin-left: 45%;
 }
-
-/* @media only screen and (max-width: 1080px) {
-  .user {
-    left: 48%;
-  }
-}
-
-@media only screen and (max-width: 905px) {
-  .user {
-    left: 35%;
-  }
-}
-
-@media only screen and (max-width: 770px) {
-  .user {
-    left: 27%;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .user {
-    width: 280px;
-    height: 475px;
-  }
-  .loader {
-    margin-top: 40%;
-  }
-} */
 
 @keyframes heartbeat {
   0% {

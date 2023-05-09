@@ -103,9 +103,9 @@ function MainComponent({ data }: MainComponentProps) {
                   <td className="py-3 ps-4 pe-3">
                     <button className="btn border-0">
                       {i === 0 ? (
-                        <img src={Lock} alt="" />
+                        <img src={Lock} alt="lock-icon" />
                       ) : (
-                        <img src={Trash} />
+                        <img src={Trash} alt="trash-icon" />
                       )}
                     </button>
                   </td>

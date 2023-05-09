@@ -31,3 +31,8 @@ export type HoverdataState = {
 export type MainComponentProps = {
   data: User[];
 };
+
+export type PaginateProps = {
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+};

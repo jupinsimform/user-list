@@ -3,15 +3,11 @@ import { useAppSelector } from "../redux/store/hooks";
 import { RootState } from "../redux/store/store";
 import CardComponent from "../components/CardComponent";
 
-function CardContainer() {
+const CardContainer = React.memo(() => {
   const hoverdata = useAppSelector(
     (state: RootState) => state.hoverdata.hoverdata
   );
-  return (
-    <>
-      <CardComponent hoverdata={hoverdata} />
-    </>
-  );
-}
+  return <CardComponent hoverdata={hoverdata} />;
+});
 
 export default CardContainer;
