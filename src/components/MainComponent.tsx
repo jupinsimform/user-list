@@ -34,6 +34,7 @@ function MainComponent({ data }: MainComponentProps) {
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
+    cardRef.current!.style.display = "none";
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -121,9 +122,8 @@ function MainComponent({ data }: MainComponentProps) {
         style={{
           maxWidth: "100%",
           ...(window.innerWidth <= 700 && {
-            left: `${mousePosition.x - 130}px`,
-            top: `${mousePosition.y + 150}px`,
-            transition: "all 0.3s ease-in-out",
+            left: `${mousePosition.x - 190}px`,
+            top: `${mousePosition.y - 90}px`,
           }),
         }}
       >
