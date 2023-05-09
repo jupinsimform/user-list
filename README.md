@@ -52,4 +52,4 @@
 
 ## Folder Structure
 
-![folder-Structure](./src/assets/folder-user-list.png)
+![folder-Structure](./src/assets/folder-structure.png)

@@ -189,6 +189,22 @@ a:link {
   margin-left: 45%;
 }
 
+@media screen and (max-width: 1300px) {
+  .main-page-user {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .main-page-user {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .main-page-user {
+    width: 100%;
+  }
+}
 @keyframes heartbeat {
   0% {
     transform: scale(1);
