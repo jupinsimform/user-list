@@ -1,11 +1,13 @@
-import { useState, useRef, useEffect } from "react";
-import Trash from "../assets/trash.svg";
+import { useState, useRef, useEffect, memo } from "react";
+import { debounce } from "lodash";
 import { useAppDispatch } from "../redux/store/hooks";
 import { setHoverdata } from "../redux/features/hoverdataSlice";
-import Lock from "../assets/lock.svg";
 import CardContainer from "../containers/CardContainer";
 import { User, MainComponentProps } from "../types/Types";
+import Lock from "../assets/lock.svg";
+import Trash from "../assets/trash.svg";
 
+const temp: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 function MainComponent({ data }: MainComponentProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -32,12 +34,17 @@ function MainComponent({ data }: MainComponentProps) {
     }
   };
 
+  const debouncedHandleResize = useRef(
+    debounce(() => {
+      setWindowWidth(window.innerWidth);
+    }, 500)
+  ).current;
+
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
     cardRef.current!.style.display = "none";
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("resize", debouncedHandleResize);
+    return () => window.removeEventListener("resize", debouncedHandleResize);
+  }, [debouncedHandleResize]);
 
   return (
     <div className="main-page">
@@ -133,4 +140,4 @@ function MainComponent({ data }: MainComponentProps) {
   );
 }
 
-export default MainComponent;
+export default memo(MainComponent);

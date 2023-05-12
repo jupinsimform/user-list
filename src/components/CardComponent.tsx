@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { CardProps } from "../types/Types";
 
 function CardComponent({ hoverdata }: CardProps) {
@@ -12,7 +13,7 @@ function CardComponent({ hoverdata }: CardProps) {
         <div className=" mb-2 plan">Your Plan: Standard</div>
         <div>
           <button className="active-users py-2 px-5 fw-bold">
-            Active User
+            {hoverdata?.active ? "Active User" : "Inactive User"}
           </button>
         </div>
       </div>
@@ -37,4 +38,4 @@ function CardComponent({ hoverdata }: CardProps) {
   );
 }
 
-export default CardComponent;
+export default memo(CardComponent);

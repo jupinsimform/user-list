@@ -1,55 +1,101 @@
-# User list app - Functional specifications
+# Practical-6
 
-## Practical-5
-
-- Once the above app UI is created, let’s change static data to dynamic data using API implementation.
-- Please go through the API documentation for getting the list of users on this page - https://reqres.in/
-- Example: for listing 1st 6 users the endpoint for API is - https://reqres.in/api/users?page=1
-- We also need to implement pagination in this application - so when the user clicks on page 2, the API endpoint should be https://reqres.in/api/users?page=2
-- For Pagination I use my custom API - https://servers-omega.vercel.app/users/p?limit=8&page=1
+- optimize code
+- add environments in the code
+- generate staging and production build
 
 ## 🚀 Live Demonstraion
 
 - [User list app](https://charming-crepe-5c855d.netlify.app/)
 
-## Setup Project Environment
+## Setup for Environment variable
 
-- install all packages
+- Vite uses dotenv to load additional environment variables from the following files in your environment directory:
 
-  > ` npm install` :
+```
+.env                # loaded in all cases
+.env.local          # loaded in all cases, ignored by git
+.env.[mode]         # only loaded in specified mode
+.env.[mode].local   # only loaded in specified mode, ignored by git
 
-- write below command
+```
 
-  > `npm run dev` : Start project on default Port
-  >
-  > - running npm run dev will start a development server that serves the Vite application and watches for changes to the code.
-  > - Specifically, npm run dev will run the vite command with the --mode development option, which starts a development server that uses the Vite build tool to serve the application.
-  > - As you make changes to the code, Vite will detect those changes and automatically rebuild and reload the application in the browser. Vite uses a fast and efficient development server that leverages browser-native ES modules to avoid expensive transpilation and bundling steps during development, which makes it faster and more responsive than many other development servers.
+### To set up environment variables in a Vite React project, you can follow these steps:
 
-## External dependencies used in this project
+1. Create a `.env` file in the root of your project. You can name this file `.env.development` for development-specific variables or `.env.production` for production-specific variables or `.env.staging` for testing-specific variable.
 
-> `@reduxjs/toolkit` :
->
-> - @reduxjs/toolkit is a package that provides utilities to simplify common Redux use cases. It includes a function called createSlice that helps to reduce boilerplate code when defining Redux reducers, as well as other features like a configureStore function that sets up a Redux store with sensible defaults.
-> - createSlice allows you to define a slice of your Redux store that includes both the reducer and actions in a single file, instead of defining them separately. This can help to reduce the amount of code you need to write and make it easier to manage the state of your application.
-> - configureStore provides a simple way to set up a Redux store with good defaults. It includes things like middleware, preloaded state, and devtools setup.
+2. Add your environment variables to the .env file in the following format: `VARIABLE_NAME=variable_value`.To prevent accidentally leaking env variables to the client, only variables prefixed with `VITE_` are exposed to your Vite-processed code. For example:
 
-> `react-redux` :
->
-> - react-redux is a library that provides bindings between React and Redux. It simplifies the process of passing the Redux store and dispatching actions to child components of a React app.
->
-> - The <Provider> component wraps the root component of the React app and provides access to the Redux store throughout the component tree.
->
-> - With react-redux, components can access data from the Redux store without having to manually pass down the data as props. This makes the development process faster and more efficient.
->
-> - react-redux also provides hooks to simplify the process of accessing data and dispatching actions. The useSelector hook allows components to access data from the Redux store, while the useDispatch hook provides access to the dispatch function.
+```
+VITE_SOME_KEY=123
+```
 
-> `react-spinners` :
->
-> - React Spinners is a collection of loading spinner components for React. It provides a set of customizable, composable loading spinners that can be used to indicate the loading status of a component or page.
-> - React Spinners is easy to use, and it offers a variety of loading spinners that can be styled to fit the design of the application. It's a popular library among React developers who need to implement loading spinners in their applications.
-> - React Spinners is built using CSS and JavaScript and can be installed as an npm package. It's an open-source library, and the source code is available on GitHub.
+3. In your code, you can access the environment variables using the `import.meta.env` object. For example:
 
-## Folder Structure
+```
+console.log(import.meta.env.VITE_SOME_KEY)
+```
 
-![folder-Structure](./src/assets/folder-structure.png)
+## How to run in different mode
+
+- clone this project and run `npm install` to install all packages.
+
+## Development Mode
+
+- to run this project in development mode go to project directory in terminal and run this command:
+
+`npm run dev`
+
+## Staging Mode
+
+- to run and see this project in Staging mode follow bellow steps:
+
+### step 1 : create .env.staging file in root folder write below code
+
+```
+VITE_APP_TITLE = Staging Build
+```
+
+### step 2 : go to terminal and write this command
+
+`npm run build:staging`
+
+- this will generate staging build of your code.
+
+### step 3 : To serve this build first install serve package and serve build.
+
+`npm install serve` : It is a command used to install the serve package from the npm registry. The serve package is a simple, zero-configuration command-line http server that can be used to serve static files from a directory.
+
+- Then go to dist folder and serve build.
+
+```
+cd dist
+serve -s
+```
+
+## Production Mode
+
+- to run and see this project in production mode follow bellow steps:
+
+### step 1 : create .env.production file in root folder write below code
+
+```
+VITE_APP_TITLE = Production Build
+```
+
+### step 2 : go to terminal and write this command
+
+`npm run build`
+
+- this will generate Production build of your code.
+
+### step 3 : To serve this build first install serve package and serve build.
+
+`npm install serve` : It is a command used to install the serve package from the npm registry. The serve package is a simple, zero-configuration command-line http server that can be used to serve static files from a directory.
+
+- Then go to dist folder and serve build.
+
+```
+cd dist
+serve -s
+```

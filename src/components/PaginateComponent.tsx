@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { PaginateProps } from "../types/Types";
 
 const PaginateComponent = ({
@@ -46,4 +46,4 @@ const PaginateComponent = ({
   );
 };
 
-export default PaginateComponent;
+export default memo(PaginateComponent);

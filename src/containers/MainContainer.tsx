@@ -22,10 +22,6 @@ const MainContainer = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (users.length === 0) {
-    return <div>No users found.</div>;
-  }
-
   return (
     <div className="main-container">
       <MainComponent data={users} />

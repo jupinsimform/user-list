@@ -8,6 +8,9 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
+      <div className="text-center text-gray">
+        {import.meta.env.VITE_APP_TITLE || "Development Mode"}
+      </div>
       <App />
     </Provider>
   </React.StrictMode>

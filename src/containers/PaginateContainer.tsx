@@ -1,5 +1,6 @@
 import PaginateComponent from "../components/PaginateComponent";
 import { PaginateProps } from "../types/Types";
+import { memo } from "react";
 
 function PaginateContainer({ currentPage, setCurrentPage }: PaginateProps) {
   return (
@@ -10,4 +11,4 @@ function PaginateContainer({ currentPage, setCurrentPage }: PaginateProps) {
   );
 }
 
-export default PaginateContainer;
+export default memo(PaginateContainer);
