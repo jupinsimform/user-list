@@ -13,7 +13,7 @@ export const fetchUsers = createAsyncThunk(
   async (page: number) => {
     try {
       const response = await axios.get(
-        `https://servers-omega.vercel.app/users/p?limit=8&page=${page}`
+        `https://servers-omega.vercel.app/users/p?limit=8&page=${page - 1}`
       );
       return [...response.data.users];
     } catch (error) {

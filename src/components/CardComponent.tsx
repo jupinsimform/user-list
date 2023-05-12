@@ -6,7 +6,11 @@ function CardComponent({ hoverdata }: CardProps) {
     <div className="user-card">
       <div className="d-flex justify-content-center align-items-center flex-column">
         <img className="profile mt-4" src={hoverdata?.avatar} alt="" />
-        <div className="mt-3 fw-bold nameOfProfile">
+        <div
+          className={`mt-3 fw-bold nameOfProfile ${
+            hoverdata?.active ? "profileActive" : "profileInactive"
+          }`}
+        >
           {`${hoverdata?.first_name} ${hoverdata?.last_name}`}
         </div>
         <div className="my-2 text-gray">{hoverdata?.email}</div>

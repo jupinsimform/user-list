@@ -30,6 +30,7 @@ export type HoverdataState = {
 
 export type MainComponentProps = {
   data: User[];
+  loading: boolean;
 };
 
 export type PaginateProps = {
